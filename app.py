@@ -613,17 +613,44 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       color: var(--muted);
       font-size: 14px;
     }}
+    .reading-grid-header {{
+      display: grid;
+      grid-template-columns: minmax(220px, 1.15fr) minmax(220px, 1.1fr) minmax(260px, 1.35fr);
+      gap: 20px;
+      padding: 0 0 10px;
+      border-bottom: 1px solid var(--line);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      color: var(--muted);
+    }}
     .reading-item {{
-      padding: 12px 0;
+      display: grid;
+      grid-template-columns: minmax(220px, 1.15fr) minmax(220px, 1.1fr) minmax(260px, 1.35fr);
+      gap: 20px;
+      align-items: start;
+      padding: 16px 0;
       border-top: 1px solid var(--line);
     }}
-    .reading-item:first-child {{
+    .reading-grid-header + .reading-item {{
       border-top: 0;
-      padding-top: 0;
     }}
-    .reading-hanzi {{ font-size: 26px; line-height: 1.35; margin-bottom: 8px; }}
-    .reading-pinyin {{ color: var(--accent); font-size: 17px; margin-bottom: 6px; }}
-    .reading-russian {{ color: var(--muted); line-height: 1.55; }}
+    .reading-hanzi {{
+      font-size: 26px;
+      line-height: 1.35;
+      font-weight: 700;
+    }}
+    .reading-pinyin {{
+      color: var(--accent);
+      font-size: 17px;
+      line-height: 1.5;
+      padding-top: 4px;
+    }}
+    .reading-russian {{
+      color: var(--muted);
+      line-height: 1.55;
+      padding-top: 2px;
+    }}
     .board {{
       padding: 20px;
     }}
@@ -746,6 +773,14 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       .hero, .board-top, .reading-head {{ flex-direction: column; }}
       .actions, .status {{ min-width: 0; width: 100%; }}
       .stats, .progress-grid {{ grid-template-columns: 1fr; }}
+      .reading-grid-header {{ display: none; }}
+      .reading-item {{
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }}
+      .reading-pinyin, .reading-russian {{
+        padding-top: 0;
+      }}
     }}
   </style>
 </head>
@@ -1122,6 +1157,17 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       el.unitTitle.textContent = state.currentUnit.title;
       el.unitMeta.textContent = `${{stageNames[state.stage]}} · ${{state.currentUnit.meta}}`;
       el.readingText.innerHTML = '';
+
+      if (state.currentUnit.readingItems.length) {{
+        const header = document.createElement('div');
+        header.className = 'reading-grid-header';
+        header.innerHTML = `
+          <div>Иероглифы</div>
+          <div>Pinyin</div>
+          <div>Перевод</div>
+        `;
+        el.readingText.appendChild(header);
+      }}
 
       state.currentUnit.readingItems.forEach(item => {{
         const block = document.createElement('div');
