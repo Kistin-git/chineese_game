@@ -1490,8 +1490,6 @@ def main() -> None:
         st.session_state["source_text"] = source_text
     elif mode == "Бесплатная автогенерация":
         st.session_state["source_text"] = source_text
-    elif mode == "Специальный формат":
-        st.session_state["special_format_text"] = special_text
 
     col_a, col_b, col_c = st.columns([1, 1, 2])
     with col_a:
