@@ -615,7 +615,20 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       width: min(1400px, calc(100% - 20px));
       margin: 10px auto 24px;
     }}
+    .shell.fullscreen {{
+      width: 100vw;
+      min-height: 100vh;
+      margin: 0;
+      padding: 18px;
+    }}
     .hero, .stat, .reading, .board, .progress-box {{
+      backdrop-filter: blur(14px);
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }}
+    .navigator {{
       backdrop-filter: blur(14px);
       background: var(--card);
       border: 1px solid rgba(255,255,255,0.72);
@@ -880,12 +893,16 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
     }}
     .lane-list {{
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: flex-start;
       gap: 10px;
     }}
     .card {{
       position: relative;
       z-index: 2;
+      flex: 0 1 auto;
+      max-width: 100%;
       padding: 12px 14px;
       border-radius: 16px;
       border: 1px solid rgba(31,36,33,.09);
@@ -895,6 +912,8 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       cursor: pointer;
     }}
     .card:hover {{ transform: translateY(-1px); }}
+    .word-card {{ min-width: 120px; }}
+    .pinyin-card, .russian-card {{ min-width: 180px; }}
     .word-card {{ background: linear-gradient(180deg, #fffefb, #f7efe2); }}
     .pinyin-card {{ background: linear-gradient(180deg, #f6fdf9, #e8f6ef); }}
     .russian-card {{ background: linear-gradient(180deg, #fff8f1, #f6e8dc); }}
@@ -953,6 +972,9 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       .stats, .progress-grid {{ grid-template-columns: repeat(2, minmax(0,1fr)); }}
       .board-shell {{ grid-template-columns: 1fr; }}
       .connections {{ display: none; }}
+      .lane-list {{
+        flex-direction: row;
+      }}
     }}
     @media (max-width: 760px) {{
       .hero, .board-top, .reading-head, .navigator {{ flex-direction: column; }}
@@ -985,6 +1007,7 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       </div>
       <div class="actions">
         <button id="nextButton" class="primary">Начать разбор</button>
+        <button id="fullscreenButton" class="ghost">На весь экран</button>
         <button id="resetButton" class="ghost">Сбросить прогресс</button>
       </div>
     </section>
@@ -1013,6 +1036,7 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
         <p id="jumpHint" class="hint">Если прогресс сбился, можно открыть любое предложение вручную.</p>
       </div>
       <div class="navigator-controls">
+        <button id="nextNavButton" class="primary">Следующее</button>
         <select id="sentenceJumpSelect" class="jump-select"></select>
         <button id="jumpButton" class="ghost">Перейти к предложению</button>
       </div>
@@ -1063,8 +1087,11 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
     }};
 
     const el = {{
+      shell: document.querySelector('.shell'),
       heroTitle: document.getElementById('heroTitle'),
       nextButton: document.getElementById('nextButton'),
+      nextNavButton: document.getElementById('nextNavButton'),
+      fullscreenButton: document.getElementById('fullscreenButton'),
       resetButton: document.getElementById('resetButton'),
       stageLabel: document.getElementById('stageLabel'),
       wordsLeftLabel: document.getElementById('wordsLeftLabel'),
@@ -1139,6 +1166,12 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
 
     function saveProgress(progress) {{
       localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    }}
+
+    function updateFullscreenState() {{
+      const active = !!document.fullscreenElement;
+      el.shell.classList.toggle('fullscreen', active);
+      el.fullscreenButton.textContent = active ? 'Свернуть экран' : 'На весь экран';
     }}
 
     function collapseWords(words) {{
@@ -1624,11 +1657,15 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       if (!state.currentUnit) {{
         el.nextButton.disabled = false;
         el.nextButton.textContent = 'Начать разбор';
+        el.nextNavButton.disabled = false;
+        el.nextNavButton.textContent = 'Начать разбор';
         return;
       }}
       if (!state.unitComplete) {{
         el.nextButton.disabled = true;
         el.nextButton.textContent = 'Сначала завершите текущий блок';
+        el.nextNavButton.disabled = true;
+        el.nextNavButton.textContent = 'Сначала завершите текущий блок';
         return;
       }}
       const stage = currentStage();
@@ -1636,6 +1673,8 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       else if (stage === 'paragraph') el.nextButton.textContent = state.stage === 'sentence' ? 'Перейти к разбору по абзацам' : 'Следующий абзац';
       else el.nextButton.textContent = state.stage === 'random' ? 'Следующий случайный набор' : 'Перейти к случайным словам';
       el.nextButton.disabled = false;
+      el.nextNavButton.textContent = el.nextButton.textContent;
+      el.nextNavButton.disabled = false;
     }}
 
     function renderAll() {{
@@ -1702,7 +1741,23 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       renderAll();
     }}
 
+    async function toggleFullscreen() {{
+      try {{
+        if (!document.fullscreenElement) {{
+          await el.shell.requestFullscreen();
+        }} else {{
+          await document.exitFullscreen();
+        }}
+      }} catch (error) {{
+        console.error(error);
+      }}
+    }}
+
     el.nextButton.addEventListener('click', () => {{
+      if (!state.currentUnit || state.unitComplete) loadNextUnit();
+    }});
+
+    el.nextNavButton.addEventListener('click', () => {{
       if (!state.currentUnit || state.unitComplete) loadNextUnit();
     }});
 
@@ -1710,6 +1765,10 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       const value = Number(el.sentenceJumpSelect.value);
       if (Number.isNaN(value)) return;
       jumpToSentence(value);
+    }});
+
+    el.fullscreenButton.addEventListener('click', () => {{
+      toggleFullscreen();
     }});
 
     el.resetButton.addEventListener('click', () => {{
@@ -1727,7 +1786,9 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       renderAll();
     }});
 
+    document.addEventListener('fullscreenchange', updateFullscreenState);
     window.addEventListener('resize', () => requestAnimationFrame(drawConnections));
+    updateFullscreenState();
     renderAll();
   </script>
 </body>
@@ -1953,7 +2014,14 @@ def main() -> None:
     )
 
     storage_key = "streamlit-chinese-game-" + hashlib.sha1(json_blob.encode("utf-8")).hexdigest()
-    components.html(game_html(dataset, storage_key), height=1800, scrolling=True)
+    large_view = st.toggle(
+        "Высокий режим отображения игры",
+        value=st.session_state.get("large_game_view", False),
+        key="large_game_view",
+        help="Увеличивает высоту встроенной игры. Для полного погружения внутри самой игры есть отдельная кнопка «На весь экран».",
+    )
+    iframe_height = 3200 if large_view else 1800
+    components.html(game_html(dataset, storage_key), height=iframe_height, scrolling=True)
 
 
 if __name__ == "__main__":
