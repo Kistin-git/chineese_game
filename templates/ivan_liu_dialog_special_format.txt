@@ -1,0 +1,811 @@
+TITLE: Диалог Иван и профессор Лю
+
+PARAGRAPH
+HANZI: 伊万：教授，您好！本人名叫伊万，想请教您一些事。今天路过办公室的时候正好看到学院将于下个月举办“人工智能前沿技术研讨会”的海报，主题非常吸引我。我是一名来自俄罗斯的留学生，毕业于莫斯科物理技术学院，目前在贵校做短期语言交换。我的研究方向是深度伪造与反伪造、大模型安全等。特别想参加该研讨会，我应该从哪里获取更多报名信息呢？
+PINYIN:
+RUSSIAN:
+
+SENTENCE
+HANZI: 伊万：教授，您好！
+PINYIN: Yīwàn: Jiàoshòu, nín hǎo!
+RUSSIAN: Иван: Профессор, здравствуйте!
+WORDS
+- 伊万 | Yīwàn | Иван
+- 教授 | jiàoshòu | профессор
+- 您好 | nín hǎo | здравствуйте
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 本人名叫伊万，想请教您一些事。
+PINYIN: Běnrén míng jiào Yīwàn, xiǎng qǐngjiào nín yìxiē shì.
+RUSSIAN: Меня зовут Иван, я хотел бы посоветоваться с вами по некоторым вопросам.
+WORDS
+- 本人 | běnrén | я сам; лично я
+- 名叫 | míng jiào | зваться
+- 伊万 | Yīwàn | Иван
+- 想 | xiǎng | хотеть
+- 请教 | qǐngjiào | вежливо спросить; посоветоваться
+- 您 | nín | Вы (вежливо)
+- 一些 | yìxiē | некоторые
+- 事 | shì | дела; вопросы
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 今天路过办公室的时候正好看到学院将于下个月举办“人工智能前沿技术研讨会”的海报，主题非常吸引我。
+PINYIN: Jīntiān lùguò bàngōngshì de shíhou zhènghǎo kàndào xuéyuàn jiāng yú xià ge yuè jǔbàn “réngōng zhìnéng qiányán jìshù yántǎohuì” de hǎibào, zhǔtí fēicháng xīyǐn wǒ.
+RUSSIAN: Сегодня, проходя мимо офиса, я как раз увидел афишу о том, что институт в следующем месяце проведёт семинар по передовым технологиям искусственного интеллекта. Тема меня очень заинтересовала.
+WORDS
+- 今天 | jīntiān | сегодня
+- 路过 | lùguò | проходить мимо
+- 办公室 | bàngōngshì | офис
+- 的 | de | служебная частица
+- 时候 | shíhou | время; момент
+- 正好 | zhènghǎo | как раз
+- 看到 | kàndào | увидеть
+- 学院 | xuéyuàn | институт; факультет
+- 将于 | jiāng yú | будет ... в ...
+- 下个月 | xià ge yuè | в следующем месяце
+- 举办 | jǔbàn | проводить
+- 人工智能 | réngōng zhìnéng | искусственный интеллект
+- 前沿技术 | qiányán jìshù | передовые технологии
+- 研讨会 | yántǎohuì | семинар
+- 的 | de | служебная частица
+- 海报 | hǎibào | афиша; плакат
+- 主题 | zhǔtí | тема
+- 非常 | fēicháng | очень
+- 吸引 | xīyǐn | привлекать
+- 我 | wǒ | меня
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 我是一名来自俄罗斯的留学生，毕业于莫斯科物理技术学院，目前在贵校做短期语言交换。
+PINYIN: Wǒ shì yì míng láizì Éluósī de liúxuéshēng, bìyè yú Mòsīkē Wùlǐ Jìshù Xuéyuàn, mùqián zài guìxiào zuò duǎnqī yǔyán jiāohuàn.
+RUSSIAN: Я иностранный студент из России, окончил Московский физико-технический институт, сейчас прохожу краткосрочный языковой обмен в вашем университете.
+WORDS
+- 我 | wǒ | я
+- 是 | shì | являться
+- 一名 | yì míng | один человек
+- 来自 | láizì | происходить из
+- 俄罗斯 | Éluósī | Россия
+- 的 | de | служебная частица
+- 留学生 | liúxuéshēng | иностранный студент
+- 毕业于 | bìyè yú | окончить
+- 莫斯科物理技术学院 | Mòsīkē Wùlǐ Jìshù Xuéyuàn | Московский физико-технический институт
+- 目前 | mùqián | в настоящее время
+- 在 | zài | в
+- 贵校 | guìxiào | ваш уважаемый университет
+- 做 | zuò | делать; проходить
+- 短期 | duǎnqī | краткосрочный
+- 语言交换 | yǔyán jiāohuàn | языковой обмен
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 我的研究方向是深度伪造与反伪造、大模型安全等。
+PINYIN: Wǒ de yánjiū fāngxiàng shì shēndù wěizào yǔ fǎn wěizào, dà móxíng ānquán děng.
+RUSSIAN: Моё научное направление — дипфейки и методы борьбы с ними, безопасность больших моделей и другие подобные темы.
+WORDS
+- 我的 | wǒ de | мой
+- 研究方向 | yánjiū fāngxiàng | научное направление
+- 是 | shì | являться
+- 深度伪造 | shēndù wěizào | дипфейк
+- 与 | yǔ | и
+- 反伪造 | fǎn wěizào | борьба с подделками
+- 大模型 | dà móxíng | большая модель
+- 安全 | ānquán | безопасность
+- 等 | děng | и так далее
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 特别想参加该研讨会，我应该从哪里获取更多报名信息呢？
+PINYIN: Tèbié xiǎng cānjiā gāi yántǎohuì, wǒ yīnggāi cóng nǎlǐ huòqǔ gèng duō bàomíng xìnxī ne?
+RUSSIAN: Я очень хотел бы принять участие в этом семинаре. Где мне можно получить больше информации о регистрации?
+WORDS
+- 特别 | tèbié | особенно
+- 想 | xiǎng | хотеть
+- 参加 | cānjiā | участвовать
+- 该 | gāi | данный
+- 研讨会 | yántǎohuì | семинар
+- 我 | wǒ | я
+- 应该 | yīnggāi | следует; должен
+- 从 | cóng | от; из
+- 哪里 | nǎlǐ | где
+- 获取 | huòqǔ | получать
+- 更多 | gèng duō | больше
+- 报名 | bàomíng | регистрация; подача заявки
+- 信息 | xìnxī | информация
+- 呢 | ne | вопросительная частица
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 刘教授：伊万，你好！很高兴你对这个研讨会感兴趣。本次研讨会是人工智能领域的学者和学生相互交流的重要平台。获取信息最直接的方式就是关注官方通知。你可以通过学校学术论坛、老师推荐的邮件列表或官方微信群来获取信息。群里经常有人分享最新的投稿和注册信息。
+PINYIN:
+RUSSIAN:
+
+SENTENCE
+HANZI: 刘教授：伊万，你好！
+PINYIN: Liú jiàoshòu: Yīwàn, nǐ hǎo!
+RUSSIAN: Профессор Лю: Иван, здравствуй!
+WORDS
+- 刘教授 | Liú jiàoshòu | профессор Лю
+- 伊万 | Yīwàn | Иван
+- 你好 | nǐ hǎo | здравствуй
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 很高兴你对这个研讨会感兴趣。
+PINYIN: Hěn gāoxìng nǐ duì zhège yántǎohuì gǎn xìngqù.
+RUSSIAN: Я рад, что тебя заинтересовал этот семинар.
+WORDS
+- 很 | hěn | очень
+- 高兴 | gāoxìng | рад
+- 你 | nǐ | ты
+- 对 | duì | по отношению к
+- 这个 | zhège | этот
+- 研讨会 | yántǎohuì | семинар
+- 感兴趣 | gǎn xìngqù | интересоваться
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 本次研讨会是人工智能领域的学者和学生相互交流的重要平台。
+PINYIN: Běn cì yántǎohuì shì réngōng zhìnéng lǐngyù de xuézhě hé xuéshēng xiānghù jiāoliú de zhòngyào píngtái.
+RUSSIAN: Этот семинар является важной площадкой для обмена мнениями между учёными и студентами в области искусственного интеллекта.
+WORDS
+- 本次 | běn cì | данный раз
+- 研讨会 | yántǎohuì | семинар
+- 是 | shì | являться
+- 人工智能 | réngōng zhìnéng | искусственный интеллект
+- 领域 | lǐngyù | область; сфера
+- 的 | de | служебная частица
+- 学者 | xuézhě | учёный
+- 和 | hé | и
+- 学生 | xuéshēng | студент
+- 相互 | xiānghù | взаимно
+- 交流 | jiāoliú | обмениваться мнениями
+- 的 | de | служебная частица
+- 重要 | zhòngyào | важный
+- 平台 | píngtái | платформа; площадка
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 获取信息最直接的方式就是关注官方通知。
+PINYIN: Huòqǔ xìnxī zuì zhíjiē de fāngshì jiù shì guānzhù guānfāng tōngzhī.
+RUSSIAN: Самый прямой способ получить информацию — следить за официальными уведомлениями.
+WORDS
+- 获取 | huòqǔ | получать
+- 信息 | xìnxī | информация
+- 最 | zuì | самый
+- 直接 | zhíjiē | прямой
+- 的 | de | служебная частица
+- 方式 | fāngshì | способ
+- 就是 | jiùshì | именно и есть
+- 关注 | guānzhù | следить
+- 官方 | guānfāng | официальный
+- 通知 | tōngzhī | уведомление
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 你可以通过学校学术论坛、老师推荐的邮件列表或官方微信群来获取信息。
+PINYIN: Nǐ kěyǐ tōngguò xuéxiào xuéshù lùntán, lǎoshī tuījiàn de yóujiàn lièbiǎo huò guānfāng Wēixìn qún lái huòqǔ xìnxī.
+RUSSIAN: Ты можешь получать информацию через университетский академический форум, рекомендованную преподавателями рассылку по электронной почте или официальный WeChat-групповой чат.
+WORDS
+- 你 | nǐ | ты
+- 可以 | kěyǐ | можно; мочь
+- 通过 | tōngguò | через
+- 学校 | xuéxiào | университет; школа
+- 学术 | xuéshù | академический
+- 论坛 | lùntán | форум
+- 老师 | lǎoshī | преподаватель
+- 推荐 | tuījiàn | рекомендовать
+- 的 | de | служебная частица
+- 邮件列表 | yóujiàn lièbiǎo | список рассылки
+- 或 | huò | или
+- 官方 | guānfāng | официальный
+- 微信群 | Wēixìn qún | группа WeChat
+- 来 | lái | чтобы
+- 获取 | huòqǔ | получать
+- 信息 | xìnxī | информацию
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 群里经常有人分享最新的投稿和注册信息。
+PINYIN: Qún lǐ jīngcháng yǒu rén fēnxiǎng zuìxīn de tóugǎo hé zhùcè xìnxī.
+RUSSIAN: В группе часто делятся самой свежей информацией о подаче материалов и регистрации.
+WORDS
+- 群里 | qún lǐ | в группе
+- 经常 | jīngcháng | часто
+- 有人 | yǒu rén | кто-то; есть люди
+- 分享 | fēnxiǎng | делиться
+- 最新 | zuìxīn | самый свежий
+- 的 | de | служебная частица
+- 投稿 | tóugǎo | подача материалов
+- 和 | hé | и
+- 注册 | zhùcè | регистрация
+- 信息 | xìnxī | информация
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 伊万：您可以告诉我具体的报名流程是什么吗？需要提交哪些材料？
+PINYIN:
+RUSSIAN:
+
+SENTENCE
+HANZI: 伊万：您可以告诉我具体的报名流程是什么吗？
+PINYIN: Yīwàn: Nín kěyǐ gàosu wǒ jùtǐ de bàomíng liúchéng shì shénme ma?
+RUSSIAN: Иван: Не могли бы вы рассказать мне, какова конкретная процедура регистрации?
+WORDS
+- 伊万 | Yīwàn | Иван
+- 您 | nín | Вы (вежливо)
+- 可以 | kěyǐ | можете
+- 告诉 | gàosu | рассказать; сказать
+- 我 | wǒ | мне
+- 具体 | jùtǐ | конкретный
+- 的 | de | служебная частица
+- 报名 | bàomíng | регистрация
+- 流程 | liúchéng | процедура
+- 是 | shì | быть
+- 什么 | shénme | что
+- 吗 | ma | вопросительная частица
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 需要提交哪些材料？
+PINYIN: Xūyào tíjiāo nǎxiē cáiliào?
+RUSSIAN: Какие материалы нужно подать?
+WORDS
+- 需要 | xūyào | нужно
+- 提交 | tíjiāo | подать
+- 哪些 | nǎxiē | какие
+- 材料 | cáiliào | материалы
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 刘教授：流程分两种：如果你只想参加研讨会听别人报告，那就直接在官网填表交费就行。但如果你想在会议上做学术报告，那么还需要先提交一份报告简介和一份论文摘要。
+PINYIN:
+RUSSIAN:
+
+SENTENCE
+HANZI: 刘教授：流程分两种：如果你只想参加研讨会听别人报告，那就直接在官网填表交费就行。
+PINYIN: Liú jiàoshòu: Liúchéng fēn liǎng zhǒng: rúguǒ nǐ zhǐ xiǎng cānjiā yántǎohuì tīng biérén bàogào, nà jiù zhíjiē zài guānwǎng tián biǎo jiāo fèi jiù xíng.
+RUSSIAN: Профессор Лю: Есть два варианта процедуры. Если ты просто хочешь участвовать в семинаре и слушать доклады других людей, то достаточно заполнить форму на официальном сайте и оплатить взнос.
+WORDS
+- 刘教授 | Liú jiàoshòu | профессор Лю
+- 流程 | liúchéng | процедура
+- 分 | fēn | делиться на
+- 两种 | liǎng zhǒng | два вида
+- 如果 | rúguǒ | если
+- 你 | nǐ | ты
+- 只 | zhǐ | только
+- 想 | xiǎng | хотеть
+- 参加 | cānjiā | участвовать
+- 研讨会 | yántǎohuì | семинар
+- 听 | tīng | слушать
+- 别人 | biérén | другие люди
+- 报告 | bàogào | доклад
+- 那 | nà | тогда
+- 就 | jiù | тогда; сразу
+- 直接 | zhíjiē | напрямую
+- 在 | zài | на
+- 官网 | guānwǎng | официальный сайт
+- 填表 | tián biǎo | заполнить форму
+- 交费 | jiāo fèi | оплатить взнос
+- 就行 | jiù xíng | этого достаточно
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 但如果你想在会议上做学术报告，那么还需要先提交一份报告简介和一份论文摘要。
+PINYIN: Dàn rúguǒ nǐ xiǎng zài huìyì shàng zuò xuéshù bàogào, nàme hái xūyào xiān tíjiāo yí fèn bàogào jiǎnjiè hé yí fèn lùnwén zhāiyào.
+RUSSIAN: Но если ты хочешь выступить на конференции с научным докладом, тогда сначала нужно подать краткое описание доклада и аннотацию статьи.
+WORDS
+- 但 | dàn | но
+- 如果 | rúguǒ | если
+- 你 | nǐ | ты
+- 想 | xiǎng | хотеть
+- 在 | zài | на
+- 会议 | huìyì | конференция
+- 上 | shàng | на
+- 做 | zuò | делать
+- 学术 | xuéshù | научный
+- 报告 | bàogào | доклад
+- 那么 | nàme | тогда
+- 还 | hái | ещё
+- 需要 | xūyào | нужно
+- 先 | xiān | сначала
+- 提交 | tíjiāo | подать
+- 一份 | yí fèn | один экземпляр
+- 报告 | bàogào | доклад
+- 简介 | jiǎnjiè | краткое описание
+- 和 | hé | и
+- 一份 | yí fèn | один экземпляр
+- 论文 | lùnwén | статья
+- 摘要 | zhāiyào | аннотация
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 伊万：我明白了。我其实非常想在这个研讨会上做一个关于“数据模型安全检测方法”的报告，因为我的研究正好与这个主题有关。
+PINYIN:
+RUSSIAN:
+
+SENTENCE
+HANZI: 伊万：我明白了。
+PINYIN: Yīwàn: Wǒ míngbái le.
+RUSSIAN: Иван: Понятно.
+WORDS
+- 伊万 | Yīwàn | Иван
+- 我 | wǒ | я
+- 明白 | míngbái | понимать
+- 了 | le | частица изменения состояния
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 我其实非常想在这个研讨会上做一个关于“数据模型安全检测方法”的报告，因为我的研究正好与这个主题有关。
+PINYIN: Wǒ qíshí fēicháng xiǎng zài zhège yántǎohuì shàng zuò yí ge guānyú “shùjù móxíng ānquán jiǎncè fāngfǎ” de bàogào, yīnwèi wǒ de yánjiū zhènghǎo yǔ zhège zhǔtí yǒuguān.
+RUSSIAN: На самом деле я очень хотел бы сделать на этом семинаре доклад на тему «методы проверки безопасности моделей данных», потому что моё исследование как раз связано с этой темой.
+WORDS
+- 我 | wǒ | я
+- 其实 | qíshí | на самом деле
+- 非常 | fēicháng | очень
+- 想 | xiǎng | хотеть
+- 在 | zài | на
+- 这个 | zhège | этот
+- 研讨会 | yántǎohuì | семинар
+- 上 | shàng | на
+- 做 | zuò | делать
+- 一个 | yí ge | один
+- 关于 | guānyú | о
+- 数据模型 | shùjù móxíng | модели данных
+- 安全 | ānquán | безопасность
+- 检测 | jiǎncè | проверка
+- 方法 | fāngfǎ | метод
+- 的 | de | служебная частица
+- 报告 | bàogào | доклад
+- 因为 | yīnwèi | потому что
+- 我的 | wǒ de | мой
+- 研究 | yánjiū | исследование
+- 正好 | zhènghǎo | как раз
+- 与 | yǔ | с; и
+- 这个 | zhège | этот
+- 主题 | zhǔtí | тема
+- 有关 | yǒuguān | быть связанным
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 刘教授：那太好了！该研讨会就是从多学科角度探讨人工智能的安全问题。想申请做报告，就在截止日期前把论文摘要和个人简介发到会议邮箱。审稿委员会会根据摘要内容的质量决定是否录用。
+PINYIN:
+RUSSIAN:
+
+SENTENCE
+HANZI: 刘教授：那太好了！
+PINYIN: Liú jiàoshòu: Nà tài hǎo le!
+RUSSIAN: Профессор Лю: Это отлично!
+WORDS
+- 刘教授 | Liú jiàoshòu | профессор Лю
+- 那 | nà | это; тогда
+- 太 | tài | очень
+- 好 | hǎo | хорошо
+- 了 | le | эмоциональная частица
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 该研讨会就是从多学科角度探讨人工智能的安全问题。
+PINYIN: Gāi yántǎohuì jiù shì cóng duō xuékē jiǎodù tàntǎo réngōng zhìnéng de ānquán wèntí.
+RUSSIAN: Этот семинар как раз посвящён обсуждению вопросов безопасности искусственного интеллекта с междисциплинарной точки зрения.
+WORDS
+- 该 | gāi | данный
+- 研讨会 | yántǎohuì | семинар
+- 就是 | jiùshì | как раз и есть
+- 从 | cóng | с
+- 多学科 | duō xuékē | междисциплинарный
+- 角度 | jiǎodù | точка зрения
+- 探讨 | tàntǎo | обсуждать
+- 人工智能 | réngōng zhìnéng | искусственный интеллект
+- 的 | de | служебная частица
+- 安全 | ānquán | безопасность
+- 问题 | wèntí | вопрос; проблема
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 想申请做报告，就在截止日期前把论文摘要和个人简介发到会议邮箱。
+PINYIN: Xiǎng shēnqǐng zuò bàogào, jiù zài jiézhǐ rìqī qián bǎ lùnwén zhāiyào hé gèrén jiǎnjiè fā dào huìyì yóuxiāng.
+RUSSIAN: Если хочешь подать заявку на выступление с докладом, отправь аннотацию статьи и личную справку на электронную почту конференции до крайнего срока.
+WORDS
+- 想 | xiǎng | хотеть
+- 申请 | shēnqǐng | подавать заявку
+- 做 | zuò | делать
+- 报告 | bàogào | доклад
+- 就 | jiù | тогда
+- 在 | zài | до
+- 截止日期 | jiézhǐ rìqī | крайний срок
+- 前 | qián | до
+- 把 | bǎ | предлог конструкции 把
+- 论文 | lùnwén | статья
+- 摘要 | zhāiyào | аннотация
+- 和 | hé | и
+- 个人 | gèrén | личный
+- 简介 | jiǎnjiè | краткая справка
+- 发到 | fā dào | отправить на
+- 会议 | huìyì | конференция
+- 邮箱 | yóuxiāng | электронная почта
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 审稿委员会会根据摘要内容的质量决定是否录用。
+PINYIN: Shěngǎo wěiyuánhuì huì gēnjù zhāiyào nèiróng de zhìliàng juédìng shìfǒu lùyòng.
+RUSSIAN: Рецензионная комиссия решит, принять ли заявку, исходя из качества содержания аннотации.
+WORDS
+- 审稿 | shěngǎo | рецензирование
+- 委员会 | wěiyuánhuì | комиссия
+- 会 | huì | будет
+- 根据 | gēnjù | на основе
+- 摘要 | zhāiyào | аннотация
+- 内容 | nèiróng | содержание
+- 的 | de | служебная частица
+- 质量 | zhìliàng | качество
+- 决定 | juédìng | решать
+- 是否 | shìfǒu | ли
+- 录用 | lùyòng | принять; утвердить
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 伊万：请问论文摘要一般有什么要求？截止日期大概是什么时候？
+PINYIN:
+RUSSIAN:
+
+SENTENCE
+HANZI: 伊万：请问论文摘要一般有什么要求？
+PINYIN: Yīwàn: Qǐngwèn lùnwén zhāiyào yìbān yǒu shénme yāoqiú?
+RUSSIAN: Иван: Скажите, пожалуйста, какие обычно бывают требования к аннотации статьи?
+WORDS
+- 伊万 | Yīwàn | Иван
+- 请问 | qǐngwèn | скажите, пожалуйста
+- 论文 | lùnwén | статья
+- 摘要 | zhāiyào | аннотация
+- 一般 | yìbān | обычно
+- 有 | yǒu | иметь; есть
+- 什么 | shénme | какие; что
+- 要求 | yāoqiú | требования
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 截止日期大概是什么时候？
+PINYIN: Jiézhǐ rìqī dàgài shì shénme shíhou?
+RUSSIAN: И примерно когда крайний срок?
+WORDS
+- 截止日期 | jiézhǐ rìqī | крайний срок
+- 大概 | dàgài | примерно
+- 是 | shì | быть
+- 什么 | shénme | что; какой
+- 时候 | shíhou | время
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 刘教授：摘要一般包括研究背景、方法、主要结论，500字左右。本次研讨会注册截止时间是下周一，摘要的截止时间更早，本周五。会议网站上有详细说明。
+PINYIN:
+RUSSIAN:
+
+SENTENCE
+HANZI: 刘教授：摘要一般包括研究背景、方法、主要结论，500字左右。
+PINYIN: Liú jiàoshòu: Zhāiyào yìbān bāokuò yánjiū bèijǐng, fāngfǎ, zhǔyào jiélùn, wǔbǎi zì zuǒyòu.
+RUSSIAN: Профессор Лю: Аннотация обычно включает исследовательский фон, методы и основные выводы, примерно 500 иероглифов.
+WORDS
+- 刘教授 | Liú jiàoshòu | профессор Лю
+- 摘要 | zhāiyào | аннотация
+- 一般 | yìbān | обычно
+- 包括 | bāokuò | включать
+- 研究 | yánjiū | исследование
+- 背景 | bèijǐng | фон
+- 方法 | fāngfǎ | метод
+- 主要 | zhǔyào | основной
+- 结论 | jiélùn | вывод
+- 500字 | wǔbǎi zì | 500 иероглифов
+- 左右 | zuǒyòu | примерно
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 本次研讨会注册截止时间是下周一，摘要的截止时间更早，本周五。
+PINYIN: Běn cì yántǎohuì zhùcè jiézhǐ shíjiān shì xià zhōu yī, zhāiyào de jiézhǐ shíjiān gèng zǎo, běn zhōu wǔ.
+RUSSIAN: Крайний срок регистрации на этот семинар — следующий понедельник, а крайний срок подачи аннотации раньше — в эту пятницу.
+WORDS
+- 本次 | běn cì | этот раз
+- 研讨会 | yántǎohuì | семинар
+- 注册 | zhùcè | регистрация
+- 截止 | jiézhǐ | окончание; дедлайн
+- 时间 | shíjiān | время
+- 是 | shì | быть
+- 下周一 | xià zhōu yī | следующий понедельник
+- 摘要 | zhāiyào | аннотация
+- 的 | de | служебная частица
+- 截止 | jiézhǐ | окончание; дедлайн
+- 时间 | shíjiān | время
+- 更 | gèng | ещё более
+- 早 | zǎo | раньше
+- 本周五 | běn zhōu wǔ | эта пятница
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 会议网站上有详细说明。
+PINYIN: Huìyì wǎngzhàn shàng yǒu xiángxì shuōmíng.
+RUSSIAN: На сайте конференции есть подробные инструкции.
+WORDS
+- 会议 | huìyì | конференция
+- 网站 | wǎngzhàn | сайт
+- 上 | shàng | на
+- 有 | yǒu | есть
+- 详细 | xiángxì | подробный
+- 说明 | shuōmíng | пояснение; инструкция
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 伊万：太棒了！我恨不得现在就回宿舍开始写简介。无论怎么样，我都会按时提交的。啊！我忘了问您，您贵姓？我其实还想了解更多中国国内的学术会议动态，方便留一下您的联系方式吗？
+PINYIN:
+RUSSIAN:
+
+SENTENCE
+HANZI: 伊万：太棒了！
+PINYIN: Yīwàn: Tài bàng le!
+RUSSIAN: Иван: Отлично!
+WORDS
+- 伊万 | Yīwàn | Иван
+- 太 | tài | очень
+- 棒 | bàng | классно
+- 了 | le | эмоциональная частица
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 我恨不得现在就回宿舍开始写简介。
+PINYIN: Wǒ hènbude xiànzài jiù huí sùshè kāishǐ xiě jiǎnjiè.
+RUSSIAN: Мне не терпится прямо сейчас вернуться в общежитие и начать писать краткое описание.
+WORDS
+- 我 | wǒ | я
+- 恨不得 | hènbude | не терпится
+- 现在 | xiànzài | сейчас
+- 就 | jiù | сразу
+- 回 | huí | вернуться
+- 宿舍 | sùshè | общежитие
+- 开始 | kāishǐ | начать
+- 写 | xiě | писать
+- 简介 | jiǎnjiè | краткое описание
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 无论怎么样，我都会按时提交的。
+PINYIN: Wúlùn zěnmeyàng, wǒ dōu huì ànshí tíjiāo de.
+RUSSIAN: В любом случае я подам всё вовремя.
+WORDS
+- 无论 | wúlùn | независимо от
+- 怎么样 | zěnmeyàng | как бы ни
+- 我 | wǒ | я
+- 都 | dōu | всё равно
+- 会 | huì | буду
+- 按时 | ànshí | вовремя
+- 提交 | tíjiāo | подать
+- 的 | de | финальная частица
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 啊！我忘了问您，您贵姓？
+PINYIN: A! Wǒ wàng le wèn nín, nín guìxìng?
+RUSSIAN: Ах! Я забыл спросить: как Ваша фамилия?
+WORDS
+- 啊 | a | ах
+- 我 | wǒ | я
+- 忘了 | wàng le | забыл
+- 问 | wèn | спросить
+- 您 | nín | Вы (вежливо)
+- 您 | nín | Вы (вежливо)
+- 贵姓 | guìxìng | ваша фамилия
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 我其实还想了解更多中国国内的学术会议动态，方便留一下您的联系方式吗？
+PINYIN: Wǒ qíshí hái xiǎng liǎojiě gèng duō Zhōngguó guónèi de xuéshù huìyì dòngtài, fāngbiàn liú yíxià nín de liánxì fāngshì ma?
+RUSSIAN: Я ещё хотел бы больше узнать об актуальной информации по академическим конференциям в Китае. Вам удобно оставить свои контактные данные?
+WORDS
+- 我 | wǒ | я
+- 其实 | qíshí | на самом деле
+- 还 | hái | ещё
+- 想 | xiǎng | хотеть
+- 了解 | liǎojiě | узнать; понять
+- 更多 | gèng duō | больше
+- 中国 | Zhōngguó | Китай
+- 国内 | guónèi | внутри страны
+- 的 | de | служебная частица
+- 学术 | xuéshù | академический
+- 会议 | huìyì | конференция
+- 动态 | dòngtài | актуальные новости
+- 方便 | fāngbiàn | удобно
+- 留 | liú | оставить
+- 一下 | yíxià | смягчающая частица
+- 您 | nín | Вы (вежливо)
+- 的 | de | служебная частица
+- 联系方式 | liánxì fāngshì | контактные данные
+- 吗 | ma | вопросительная частица
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 刘教授：当然，免贵姓刘。可以叫我刘老师或者刘教授。这是我的名片，上面有我的联系方式。这是我的微信二维码，你也可以扫一扫加好友。如果有问题，随时联系我。
+PINYIN:
+RUSSIAN:
+
+SENTENCE
+HANZI: 刘教授：当然，免贵姓刘。
+PINYIN: Liú jiàoshòu: Dāngrán, miǎnguì xìng Liú.
+RUSSIAN: Профессор Лю: Конечно, моя фамилия Лю.
+WORDS
+- 刘教授 | Liú jiàoshòu | профессор Лю
+- 当然 | dāngrán | конечно
+- 免贵姓 | miǎnguì xìng | позвольте ответить на вопрос о фамилии
+- 刘 | Liú | Лю
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 可以叫我刘老师或者刘教授。
+PINYIN: Kěyǐ jiào wǒ Liú lǎoshī huòzhě Liú jiàoshòu.
+RUSSIAN: Можешь называть меня преподаватель Лю или профессор Лю.
+WORDS
+- 可以 | kěyǐ | можно
+- 叫 | jiào | называть
+- 我 | wǒ | меня
+- 刘老师 | Liú lǎoshī | преподаватель Лю
+- 或者 | huòzhě | или
+- 刘教授 | Liú jiàoshòu | профессор Лю
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 这是我的名片，上面有我的联系方式。
+PINYIN: Zhè shì wǒ de míngpiàn, shàngmiàn yǒu wǒ de liánxì fāngshì.
+RUSSIAN: Вот моя визитная карточка, на ней есть мои контактные данные.
+WORDS
+- 这 | zhè | это
+- 是 | shì | есть
+- 我的 | wǒ de | мой
+- 名片 | míngpiàn | визитная карточка
+- 上面 | shàngmiàn | на ней
+- 有 | yǒu | есть
+- 我的 | wǒ de | мой
+- 联系方式 | liánxì fāngshì | контактные данные
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 这是我的微信二维码，你也可以扫一扫加好友。
+PINYIN: Zhè shì wǒ de Wēixìn èrwéimǎ, nǐ yě kěyǐ sǎo yì sǎo jiā hǎoyǒu.
+RUSSIAN: Вот мой QR-код WeChat, ты также можешь отсканировать его и добавить меня в друзья.
+WORDS
+- 这 | zhè | это
+- 是 | shì | есть
+- 我的 | wǒ de | мой
+- 微信 | Wēixìn | WeChat
+- 二维码 | èrwéimǎ | QR-код
+- 你 | nǐ | ты
+- 也 | yě | тоже
+- 可以 | kěyǐ | можешь
+- 扫一扫 | sǎo yí sǎo | отсканировать
+- 加 | jiā | добавить
+- 好友 | hǎoyǒu | друг
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 如果有问题，随时联系我。
+PINYIN: Rúguǒ yǒu wèntí, suíshí liánxì wǒ.
+RUSSIAN: Если будут вопросы, связывайся со мной в любое время.
+WORDS
+- 如果 | rúguǒ | если
+- 有 | yǒu | есть
+- 问题 | wèntí | вопрос; проблема
+- 随时 | suíshí | в любое время
+- 联系 | liánxì | связаться
+- 我 | wǒ | со мной
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 伊万：太感谢您了！我看到海报上说，有近20位来自中国、俄罗斯、日本、德国的学者和超百名学生参加这次研讨会，我恨不得马上就可以听到大家的见解。
+PINYIN:
+RUSSIAN:
+
+SENTENCE
+HANZI: 伊万：太感谢您了！
+PINYIN: Yīwàn: Tài gǎnxiè nín le!
+RUSSIAN: Иван: Огромное вам спасибо!
+WORDS
+- 伊万 | Yīwàn | Иван
+- 太 | tài | очень
+- 感谢 | gǎnxiè | благодарить
+- 您 | nín | Вас
+- 了 | le | эмоциональная частица
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 我看到海报上说，有近20位来自中国、俄罗斯、日本、德国的学者和超百名学生参加这次研讨会，我恨不得马上就可以听到大家的见解。
+PINYIN: Wǒ kàndào hǎibào shàng shuō, yǒu jìn èrshí wèi láizì Zhōngguó, Éluósī, Rìběn, Déguó de xuézhě hé chāo bǎi míng xuéshēng cānjiā zhè cì yántǎohuì, wǒ hènbude mǎshàng jiù kěyǐ tīngdào dàjiā de jiànjiě.
+RUSSIAN: Я видел на афише, что в этом семинаре примут участие почти 20 учёных из Китая, России, Японии и Германии, а также более ста студентов. Мне не терпится поскорее услышать мнения всех участников.
+WORDS
+- 我 | wǒ | я
+- 看到 | kàndào | увидел
+- 海报 | hǎibào | афиша
+- 上 | shàng | на
+- 说 | shuō | сказано
+- 有 | yǒu | есть
+- 近20位 | jìn èrshí wèi | почти 20 человек
+- 来自 | láizì | из
+- 中国 | Zhōngguó | Китай
+- 俄罗斯 | Éluósī | Россия
+- 日本 | Rìběn | Япония
+- 德国 | Déguó | Германия
+- 的 | de | служебная частица
+- 学者 | xuézhě | учёные
+- 和 | hé | и
+- 超百名 | chāo bǎi míng | более ста
+- 学生 | xuéshēng | студенты
+- 参加 | cānjiā | участвовать
+- 这次 | zhè cì | на этот раз
+- 研讨会 | yántǎohuì | семинар
+- 我 | wǒ | я
+- 恨不得 | hènbude | не терпится
+- 马上 | mǎshàng | немедленно
+- 就 | jiù | сразу
+- 可以 | kěyǐ | мочь
+- 听到 | tīngdào | услышать
+- 大家 | dàjiā | все
+- 的 | de | служебная частица
+- 见解 | jiànjiě | мнения; взгляды
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH

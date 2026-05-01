@@ -1,6 +1,7 @@
 import hashlib
 import json
 import re
+from pathlib import Path
 from typing import Any, Dict, List
 
 import streamlit as st
@@ -8,6 +9,7 @@ import streamlit.components.v1 as components
 
 
 st.set_page_config(page_title="Chinese Visual Matching Builder", page_icon="汉", layout="wide")
+BASE_DIR = Path(__file__).resolve().parent
 
 PUNCT_ONLY_RE = re.compile(r"^[\s，。！？；：、“”‘’（）()《》〈〉【】…,.!?:;\"'`·—-]+$")
 SENTENCE_SPLIT_RE = re.compile(r"(?<=[。！？!?；;])")
@@ -52,6 +54,16 @@ def special_format_template() -> str:
         END_PARAGRAPH
         """
     ).strip()
+
+
+def special_format_presets() -> Dict[str, str]:
+    preset_file = BASE_DIR / "templates" / "ivan_liu_dialog_special_format.txt"
+    presets = {
+        "Минимальный шаблон": special_format_template(),
+    }
+    if preset_file.exists():
+        presets["Диалог Иван — профессор Лю"] = preset_file.read_text(encoding="utf-8")
+    return presets
 
 
 def llm_prompt_for_special_format() -> str:
@@ -1443,6 +1455,7 @@ def main() -> None:
             use_container_width=True,
         )
 
+    presets = special_format_presets()
     uploaded = st.file_uploader("Загрузите `.txt` или `.md`", type=["txt", "md"]) if mode == "Бесплатная автогенерация" else None
     uploaded_json = st.file_uploader("Загрузите готовый JSON структуры", type=["json"]) if mode == "Загрузить готовый JSON" else None
     special_text = ""
@@ -1456,9 +1469,18 @@ def main() -> None:
             placeholder="Вставьте китайский текст. Лучше сохранять абзацы и переносы строк.",
         )
     elif mode == "Специальный формат":
+        preset_name = st.selectbox(
+            "Готовый шаблон",
+            options=list(presets.keys()),
+            index=1 if "Диалог Иван — профессор Лю" in presets else 0,
+            key="special_format_preset_name",
+        )
+        if st.session_state.get("special_format_loaded_preset") != preset_name:
+            st.session_state["special_format_text"] = presets[preset_name]
+            st.session_state["special_format_loaded_preset"] = preset_name
         special_text = st.text_area(
             "Вставьте текст в специальном формате",
-            value=st.session_state.get("special_format_text", special_format_template()),
+            key="special_format_text",
             height=420,
             placeholder="TITLE: ...\n\nPARAGRAPH\nHANZI: ...",
         )
@@ -1486,6 +1508,8 @@ def main() -> None:
         st.session_state.pop("source_text", None)
         st.session_state.pop("dataset_title", None)
         st.session_state.pop("special_format_text", None)
+        st.session_state.pop("special_format_loaded_preset", None)
+        st.session_state.pop("special_format_preset_name", None)
         st.rerun()
 
     st.session_state["dataset_title"] = title
