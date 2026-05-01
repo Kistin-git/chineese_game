@@ -66,6 +66,60 @@ def special_format_presets() -> Dict[str, str]:
     return presets
 
 
+def free_text_presets() -> Dict[str, Dict[str, str]]:
+    lesson_22_upper = textwrap_dedent(
+        """
+        尊敬的李教授：
+        您好！
+
+        我是一名来自莫斯科物理技术学院的学生，叫安娜。最近，我读了您关于太阳能的论文。由于论文内容非常精彩，我少说也读了三遍。我对有关太阳能的研究产生了浓厚的兴趣。
+
+        本人希望将来从事太阳能研究，因此想向您请教。关于如何写论文，您能给我一些建议吗？在您的指导下，我肯定能进步很快。
+
+        您的论文值得反复学习，我几乎每天都会思考其中的问题。
+
+        希望能在一周之内收到您的回复。非常感谢您的帮助！
+
+        此致
+        敬礼！祝您生活愉快！
+
+        学生：安娜
+        2026年2月1日
+        """
+    ).strip()
+    lesson_22_lower = textwrap_dedent(
+        """
+        亲爱的安娜同学：
+        你好！
+
+        来信已收到。根据你信中说的问题，本信会和你说明如何用中文写学术论文。
+
+        首先，有关论文结构，必须按论文应该有的格式要求：标题、摘要、关键词、引言、正文、结论和参考文献。在学术规范下，每个部分都有明确要求。
+
+        其次，关于摘要，必须在300字之内，简单说明研究目的、方法、结果与结论。引言部分尤其重要，需要说明有关选题的背景、意义和前人研究。由于论文质量直接关系到学术价值，引言必须清晰明确。
+
+        然后，正文部分根据研究内容来写，一切内容都应该根据事实或数据。你可以分段讨论不同问题，但逻辑必须清晰。值得注意的是，在写中文论文的时候，句子的意思一定要简单明了，不建议用太长的句子。
+
+        最后，结论部分要写你的观点，说明你的研究有什么不足，研究的未来方向是什么。尽管你刚开始学习写论文，仍然可以写出一篇值得大家学习的论文。只要认真准备，肯定会有很大的进步。
+
+        几乎所有论文都需反复修改，请不用担心。随信附上一个有关如何写中文论文的说明，你可以参考一下。如果你还有问题，欢迎进一步联系。
+
+        祝你
+        学习顺利！
+
+        李教授
+        2026年2月6日
+        """
+    ).strip()
+    lesson_22_both = f"{lesson_22_upper}\n\n{lesson_22_lower}"
+    return {
+        "Пусто / свой текст": {"title": "Новый китайский текст", "text": ""},
+        "22课 上 — письмо Анны": {"title": "22课 上 — письмо Анны профессору Ли", "text": lesson_22_upper},
+        "22课 下 — ответ профессора": {"title": "22课 下 — ответ профессора Ли", "text": lesson_22_lower},
+        "22课 — оба текста": {"title": "22课 — письмо и ответ", "text": lesson_22_both},
+    }
+
+
 def llm_prompt_for_special_format() -> str:
     return textwrap_dedent(
         """
@@ -566,6 +620,43 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       margin-bottom: 16px;
     }}
     .progress-box {{ padding: 14px 16px 16px; }}
+    .navigator {{
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: end;
+      margin-bottom: 16px;
+      padding: 16px 18px;
+    }}
+    .navigator-copy {{
+      flex: 1 1 auto;
+    }}
+    .navigator-title {{
+      margin: 0 0 6px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      color: var(--muted);
+    }}
+    .navigator-copy .hint {{
+      margin: 0;
+    }}
+    .navigator-controls {{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }}
+    .jump-select {{
+      min-width: 320px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(31,36,33,.12);
+      background: rgba(255,250,240,.94);
+      color: var(--ink);
+      font-size: 14px;
+    }}
     .progress-top {{
       display: flex;
       justify-content: space-between;
@@ -770,9 +861,12 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       .connections {{ display: none; }}
     }}
     @media (max-width: 760px) {{
-      .hero, .board-top, .reading-head {{ flex-direction: column; }}
+      .hero, .board-top, .reading-head, .navigator {{ flex-direction: column; }}
       .actions, .status {{ min-width: 0; width: 100%; }}
       .stats, .progress-grid {{ grid-template-columns: 1fr; }}
+      .navigator-controls, .jump-select {{
+        width: 100%;
+      }}
       .reading-grid-header {{ display: none; }}
       .reading-item {{
         grid-template-columns: 1fr;
@@ -817,6 +911,17 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
         <div class="progress-top"><span>Текущее задание</span><span id="unitProgressText">—</span></div>
         <div class="track warm"><div id="unitProgressFill" class="fill warm"></div></div>
       </article>
+    </section>
+
+    <section class="navigator">
+      <div class="navigator-copy">
+        <p class="navigator-title">Навигация по предложениям</p>
+        <p id="jumpHint" class="hint">Если прогресс сбился, можно открыть любое предложение вручную.</p>
+      </div>
+      <div class="navigator-controls">
+        <select id="sentenceJumpSelect" class="jump-select"></select>
+        <button id="jumpButton" class="ghost">Перейти к предложению</button>
+      </div>
     </section>
 
     <section class="reading">
@@ -879,6 +984,9 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       unitMeta: document.getElementById('unitMeta'),
       readingText: document.getElementById('readingText'),
       selectionStatus: document.getElementById('selectionStatus'),
+      jumpHint: document.getElementById('jumpHint'),
+      sentenceJumpSelect: document.getElementById('sentenceJumpSelect'),
+      jumpButton: document.getElementById('jumpButton'),
       boardShell: document.getElementById('boardShell'),
       connections: document.getElementById('connections'),
       wordsLane: document.getElementById('wordsLane'),
@@ -948,6 +1056,7 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
         const paragraphWords = [];
 
         paragraph.sentences.forEach((sentence, sentenceIndex) => {{
+          const globalSentenceIndex = sentenceUnits.length + 1;
           const words = sentence.words.map((word, wordIndex) => {{
             const item = {{
               ...word,
@@ -981,7 +1090,10 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
           sentenceUnits.push({{
             id: sentence.id,
             kind: 'sentence',
-            title: `Абзац ${{paragraphIndex+1}}, предложение ${{sentenceIndex+1}}`,
+            globalIndex: globalSentenceIndex,
+            paragraphNumber: paragraphIndex + 1,
+            sentenceNumber: sentenceIndex + 1,
+            title: `Предложение ${{globalSentenceIndex}}`,
             meta: `${{words.length}} слов(а)`,
             readingItems: [{{
               hanzi: sentence.hanzi,
@@ -1059,6 +1171,11 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
         if (!done.has(units[i].id)) return {{ index: i, unit: units[i] }};
       }}
       return {{ index: -1, unit: null }};
+    }}
+
+    function sentenceJumpLabel(unit) {{
+      const done = state.progress.completedSentenceIds.includes(unit.id) ? '✓ ' : '';
+      return `${{done}}${{unit.globalIndex}} из ${{built.sentenceUnits.length}} · абзац ${{unit.paragraphNumber}}, предложение ${{unit.sentenceNumber}}`;
     }}
 
     function buildRandomUnit() {{
@@ -1155,7 +1272,10 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       }}
 
       el.unitTitle.textContent = state.currentUnit.title;
-      el.unitMeta.textContent = `${{stageNames[state.stage]}} · ${{state.currentUnit.meta}}`;
+      const positionMeta = state.currentUnit.kind === 'sentence'
+        ? `Абзац ${{state.currentUnit.paragraphNumber}}, предложение ${{state.currentUnit.sentenceNumber}}`
+        : '';
+      el.unitMeta.textContent = [stageNames[state.stage], positionMeta, state.currentUnit.meta].filter(Boolean).join(' · ');
       el.readingText.innerHTML = '';
 
       if (state.currentUnit.readingItems.length) {{
@@ -1305,6 +1425,34 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       }});
     }}
 
+    function renderJumpControls() {{
+      const total = built.sentenceUnits.length;
+      const done = state.progress.completedSentenceIds.length;
+      el.jumpHint.textContent = `Разобрано ${{done}} из ${{total}} предложений. Прыжок не засчитывает пропущенные блоки автоматически.`;
+      el.sentenceJumpSelect.innerHTML = '';
+
+      built.sentenceUnits.forEach((unit, index) => {{
+        const option = document.createElement('option');
+        option.value = String(index);
+        option.textContent = sentenceJumpLabel(unit);
+        el.sentenceJumpSelect.appendChild(option);
+      }});
+
+      if (!total) {{
+        el.sentenceJumpSelect.disabled = true;
+        el.jumpButton.disabled = true;
+        return;
+      }}
+
+      let selectedIndex = Math.max(0, Math.min(state.progress.sentenceCursor, total - 1));
+      if (state.currentUnit?.kind === 'sentence') {{
+        selectedIndex = state.currentUnit.globalIndex - 1;
+      }}
+      el.sentenceJumpSelect.value = String(selectedIndex);
+      el.sentenceJumpSelect.disabled = false;
+      el.jumpButton.disabled = false;
+    }}
+
     function renderStats() {{
       const stage = currentStage();
       el.stageLabel.textContent = stageNames[stage];
@@ -1367,6 +1515,7 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
 
     function renderAll() {{
       el.heroTitle.textContent = DATA.title;
+      renderJumpControls();
       renderStats();
       renderReading();
       updateStatus();
@@ -1418,8 +1567,24 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       renderAll();
     }}
 
+    function jumpToSentence(index) {{
+      if (!built.sentenceUnits.length) return;
+      const safeIndex = Math.max(0, Math.min(index, built.sentenceUnits.length - 1));
+      state.stage = 'sentence';
+      state.progress.sentenceCursor = safeIndex;
+      saveProgress(state.progress);
+      initUnit(built.sentenceUnits[safeIndex]);
+      renderAll();
+    }}
+
     el.nextButton.addEventListener('click', () => {{
       if (!state.currentUnit || state.unitComplete) loadNextUnit();
+    }});
+
+    el.jumpButton.addEventListener('click', () => {{
+      const value = Number(el.sentenceJumpSelect.value);
+      if (Number.isNaN(value)) return;
+      jumpToSentence(value);
     }});
 
     el.resetButton.addEventListener('click', () => {{
@@ -1500,13 +1665,36 @@ def main() -> None:
             mime="text/plain",
             use_container_width=True,
         )
-
-    presets = special_format_presets()
+    special_presets = special_format_presets()
+    free_presets = free_text_presets()
     uploaded = st.file_uploader("Загрузите `.txt` или `.md`", type=["txt", "md"]) if mode == "Бесплатная автогенерация" else None
     uploaded_json = st.file_uploader("Загрузите готовый JSON структуры", type=["json"]) if mode == "Загрузить готовый JSON" else None
     special_text = ""
-    title = st.text_input("Название набора", value=st.session_state.get("dataset_title", "Новый китайский текст"))
     source_text = ""
+    if mode == "Бесплатная автогенерация":
+        preset_name = st.selectbox(
+            "Готовый текст",
+            options=list(free_presets.keys()),
+            index=0,
+            key="source_text_preset_name",
+        )
+        if st.session_state.get("source_text_loaded_preset") != preset_name:
+            st.session_state["source_text"] = free_presets[preset_name]["text"]
+            st.session_state["dataset_title"] = free_presets[preset_name]["title"]
+            st.session_state["source_text_loaded_preset"] = preset_name
+    elif mode == "Специальный формат":
+        preset_name = st.selectbox(
+            "Готовый шаблон",
+            options=list(special_presets.keys()),
+            index=1 if "Диалог Иван — профессор Лю" in special_presets else 0,
+            key="special_format_preset_name",
+        )
+        if st.session_state.get("special_format_loaded_preset") != preset_name:
+            st.session_state["special_format_text"] = special_presets[preset_name]
+            st.session_state["special_format_loaded_preset"] = preset_name
+
+    title = st.text_input("Название набора", value=st.session_state.get("dataset_title", "Новый китайский текст"))
+
     if mode == "Бесплатная автогенерация":
         source_text = st.text_area(
             "Или вставьте китайский текст сюда",
@@ -1515,15 +1703,6 @@ def main() -> None:
             placeholder="Вставьте китайский текст. Лучше сохранять абзацы и переносы строк.",
         )
     elif mode == "Специальный формат":
-        preset_name = st.selectbox(
-            "Готовый шаблон",
-            options=list(presets.keys()),
-            index=1 if "Диалог Иван — профессор Лю" in presets else 0,
-            key="special_format_preset_name",
-        )
-        if st.session_state.get("special_format_loaded_preset") != preset_name:
-            st.session_state["special_format_text"] = presets[preset_name]
-            st.session_state["special_format_loaded_preset"] = preset_name
         special_text = st.text_area(
             "Вставьте текст в специальном формате",
             key="special_format_text",
@@ -1554,6 +1733,8 @@ def main() -> None:
         st.session_state.pop("special_format_text", None)
         st.session_state.pop("special_format_loaded_preset", None)
         st.session_state.pop("special_format_preset_name", None)
+        st.session_state.pop("source_text_loaded_preset", None)
+        st.session_state.pop("source_text_preset_name", None)
         st.rerun()
 
     st.session_state["dataset_title"] = title
