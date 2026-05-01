@@ -1,0 +1,281 @@
+TITLE: 22课 上 — письмо Анны
+
+PARAGRAPH
+HANZI: 尊敬的李教授： 您好！
+PINYIN: zūn jìng de lǐ jiào shòu： nín hǎo！
+RUSSIAN: Дорогой профессор Ли: Здравствуйте!
+
+SENTENCE
+HANZI: 尊敬的李教授： 您好！
+PINYIN: zūn jìng de lǐ jiào shòu： nín hǎo！
+RUSSIAN: Дорогой профессор Ли: Здравствуйте!
+WORDS
+- 尊敬 | zūn jìng | Уважать
+- 的 | de | из
+- 李教授 | lǐ jiào shòu | Профессор Ли
+- 您好 | nín hǎo | Привет
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 我是一名来自莫斯科物理技术学院的学生，叫安娜。最近，我读了您关于太阳能的论文。由于论文内容非常精彩，我少说也读了三遍。我对有关太阳能的研究产生了浓厚的兴趣。
+PINYIN: wǒ shì yī míng lái zì mò sī kē wù lǐ jì shù xué yuàn de xué shēng， jiào ān nà。 zuì jìn， wǒ dú le nín guān yú tài yáng néng de lùn wén。 yóu yú lùn wén nèi róng fēi cháng jīng cǎi， wǒ shǎo shuō yě dú le sān biàn。 wǒ duì yǒu guān tài yáng néng de yán jiū chǎn shēng le nóng hòu de xìng qù。
+RUSSIAN: Я студентка Московского физико-технического института, меня зовут Анна. Недавно я прочитал вашу статью о солнечной энергии. Поскольку содержание статьи очень увлекательное, я прочитал ее как минимум три раза. У меня большой интерес к исследованиям, связанным с солнечной энергетикой.
+
+SENTENCE
+HANZI: 我是一名来自莫斯科物理技术学院的学生，叫安娜。
+PINYIN: wǒ shì yī míng lái zì mò sī kē wù lǐ jì shù xué yuàn de xué shēng， jiào ān nà。
+RUSSIAN: Я студентка Московского физико-технического института, меня зовут Анна.
+WORDS
+- 我 | wǒ | я
+- 是 | shì | да
+- 一名 | yī míng | один
+- 来自 | lái zì | от
+- 莫斯科 | mò sī kē | Москва
+- 物理 | wù lǐ | физика
+- 技术 | jì shù | технология
+- 学院 | xué yuàn | колледж
+- 的 | de | из
+- 学生 | xué shēng | студент
+- 叫 | jiào | Вызов
+- 安娜 | ān nà | Анна
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 最近，我读了您关于太阳能的论文。
+PINYIN: zuì jìn， wǒ dú le nín guān yú tài yáng néng de lùn wén。
+RUSSIAN: Недавно я прочитал вашу статью о солнечной энергии.
+WORDS
+- 最近 | zuì jìn | недавний
+- 我读 | wǒ dú | Я читаю
+- 了 | le | Понятно
+- 您 | nín | ты
+- 关于 | guān yú | о
+- 太阳能 | tài yáng néng | солнечная энергия
+- 的 | de | из
+- 论文 | lùn wén | бумага
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 由于论文内容非常精彩，我少说也读了三遍。
+PINYIN: yóu yú lùn wén nèi róng fēi cháng jīng cǎi， wǒ shǎo shuō yě dú le sān biàn。
+RUSSIAN: Поскольку содержание статьи очень увлекательное, я прочитал ее как минимум три раза.
+WORDS
+- 由于 | yóu yú | потому что
+- 论文 | lùn wén | бумага
+- 内容 | nèi róng | содержание
+- 非常 | fēi cháng | Очень
+- 精彩 | jīng cǎi | Замечательный
+- 我少 | wǒ shǎo | я меньше
+- 说 | shuō | объяснять
+- 也 | yě | также
+- 读 | dú | читать
+- 了 | le | Понятно
+- 三遍 | sān biàn | три раза
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 我对有关太阳能的研究产生了浓厚的兴趣。
+PINYIN: wǒ duì yǒu guān tài yáng néng de yán jiū chǎn shēng le nóng hòu de xìng qù。
+RUSSIAN: У меня большой интерес к исследованиям, связанным с солнечной энергетикой.
+WORDS
+- 我 | wǒ | я
+- 对 | duì | верно
+- 有关 | yǒu guān | связанный
+- 太阳能 | tài yáng néng | солнечная энергия
+- 的 | de | из
+- 研究 | yán jiū | Исследовать
+- 产生 | chǎn shēng | производить
+- 了 | le | Понятно
+- 浓厚 | nóng hòu | сильный
+- 的 | de | из
+- 兴趣 | xìng qù | интерес
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 本人希望将来从事太阳能研究，因此想向您请教。关于如何写论文，您能给我一些建议吗？在您的指导下，我肯定能进步很快。
+PINYIN: běn rén xī wàng jiāng lái cóng shì tài yáng néng yán jiū， yīn cǐ xiǎng xiàng nín qǐng jiào。 guān yú rú hé xiě lùn wén， nín néng gěi wǒ yī xiē jiàn yì ma？ zài nín de zhǐ dǎo xià， wǒ kěn dìng néng jìn bù hěn kuài。
+RUSSIAN: Я надеюсь в будущем заняться исследованиями солнечной энергии, поэтому хотел бы попросить вашего совета. Можете ли вы дать мне несколько советов, как написать эссе? Под вашим руководством я обязательно добьюсь быстрого прогресса.
+
+SENTENCE
+HANZI: 本人希望将来从事太阳能研究，因此想向您请教。
+PINYIN: běn rén xī wàng jiāng lái cóng shì tài yáng néng yán jiū， yīn cǐ xiǎng xiàng nín qǐng jiào。
+RUSSIAN: Я надеюсь в будущем заняться исследованиями солнечной энергии, поэтому хотел бы попросить вашего совета.
+WORDS
+- 本人 | běn rén | сам
+- 希望 | xī wàng | надеяться
+- 将来 | jiāng lái | будущее
+- 从事 | cóng shì | заниматься
+- 太阳能 | tài yáng néng | солнечная энергия
+- 研究 | yán jiū | Исследовать
+- 因此 | yīn cǐ | поэтому
+- 想 | xiǎng | думать
+- 向 | xiàng | К
+- 您 | nín | ты
+- 请教 | qǐng jiào | проконсультироваться
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 关于如何写论文，您能给我一些建议吗？
+PINYIN: guān yú rú hé xiě lùn wén， nín néng gěi wǒ yī xiē jiàn yì ma？
+RUSSIAN: Можете ли вы дать мне несколько советов, как написать эссе?
+WORDS
+- 关于 | guān yú | о
+- 如何 | rú hé | как
+- 写 | xiě | Писать
+- 论文 | lùn wén | бумага
+- 您 | nín | ты
+- 能 | néng | способный
+- 给 | gěi | Давать
+- 我 | wǒ | я
+- 一些 | yī xiē | Некоторый
+- 建议 | jiàn yì | предположение
+- 吗 | ma | ?
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 在您的指导下，我肯定能进步很快。
+PINYIN: zài nín de zhǐ dǎo xià， wǒ kěn dìng néng jìn bù hěn kuài。
+RUSSIAN: Под вашим руководством я обязательно добьюсь быстрого прогресса.
+WORDS
+- 在 | zài | существовать
+- 您 | nín | ты
+- 的 | de | из
+- 指导 | zhǐ dǎo | гид
+- 下 | xià | Вниз
+- 我 | wǒ | я
+- 肯定 | kěn dìng | подтверждать
+- 能 | néng | способный
+- 进步 | jìn bù | прогресс
+- 很快 | hěn kuài | скоро
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 您的论文值得反复学习，我几乎每天都会思考其中的问题。
+PINYIN: nín de lùn wén zhí de fǎn fù xué xí， wǒ jī hū měi tiān dū huì sī kǎo qí zhōng de wèn tí。
+RUSSIAN: Ваша статья достойна изучения снова и снова, и я думаю о ее проблемах почти каждый день.
+
+SENTENCE
+HANZI: 您的论文值得反复学习，我几乎每天都会思考其中的问题。
+PINYIN: nín de lùn wén zhí de fǎn fù xué xí， wǒ jī hū měi tiān dū huì sī kǎo qí zhōng de wèn tí。
+RUSSIAN: Ваша статья достойна изучения снова и снова, и я думаю о ее проблемах почти каждый день.
+WORDS
+- 您 | nín | ты
+- 的 | de | из
+- 论文 | lùn wén | бумага
+- 值得 | zhí de | ценность
+- 反复 | fǎn fù | неоднократно
+- 学习 | xué xí | изучать
+- 我 | wǒ | я
+- 几乎 | jī hū | почти
+- 每天 | měi tiān | каждый день
+- 都 | dōu | Все
+- 会 | huì | встреча
+- 思考 | sī kǎo | думать
+- 其中 | qí zhōng | в
+- 的 | de | из
+- 问题 | wèn tí | вопрос
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 希望能在一周之内收到您的回复。非常感谢您的帮助！
+PINYIN: xī wàng néng zài yī zhōu zhī nèi shōu dào nín de huí fù。 fēi cháng gǎn xiè nín de bāng zhù！
+RUSSIAN: Надеюсь услышать от вас в течение недели. Большое спасибо за вашу помощь!
+
+SENTENCE
+HANZI: 希望能在一周之内收到您的回复。
+PINYIN: xī wàng néng zài yī zhōu zhī nèi shōu dào nín de huí fù。
+RUSSIAN: Надеюсь услышать от вас в течение недели.
+WORDS
+- 希望 | xī wàng | надеяться
+- 能 | néng | способный
+- 在 | zài | существовать
+- 一周 | yī zhōu | неделя
+- 之内 | zhī nèi | в пределах
+- 收到 | shōu dào | получать
+- 您 | nín | ты
+- 的 | de | из
+- 回复 | huí fù | отвечать
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 非常感谢您的帮助！
+PINYIN: fēi cháng gǎn xiè nín de bāng zhù！
+RUSSIAN: Большое спасибо за вашу помощь!
+WORDS
+- 非常 | fēi cháng | Очень
+- 感谢您 | gǎn xiè nín | спасибо вам
+- 的 | de | из
+- 帮助 | bāng zhù | помощь
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 此致 敬礼！祝您生活愉快！
+PINYIN: cǐ zhì jìng lǐ！ zhù nín shēng huó yú kuài！
+RUSSIAN: С уважением Салют! Желаю вам счастливой жизни!
+
+SENTENCE
+HANZI: 此致 敬礼！
+PINYIN: cǐ zhì jìng lǐ！
+RUSSIAN: С уважением Салют!
+WORDS
+- 此致 | cǐ zhì | Искренне
+- 敬礼 | jìng lǐ | приветствие
+END_WORDS
+END_SENTENCE
+
+SENTENCE
+HANZI: 祝您生活愉快！
+PINYIN: zhù nín shēng huó yú kuài！
+RUSSIAN: Желаю вам счастливой жизни!
+WORDS
+- 祝您 | zhù nín | желаю тебе
+- 生活 | shēng huó | Жизнь
+- 愉快 | yú kuài | радость
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH
+
+PARAGRAPH
+HANZI: 学生：安娜 2026年2月1日
+PINYIN: xué shēng： ān nà 2 0 2 6 nián 2 yuè 1 rì
+RUSSIAN: Ученица: Анна 1 февраля 2026 г.
+
+SENTENCE
+HANZI: 学生：安娜 2026年2月1日
+PINYIN: xué shēng： ān nà 2 0 2 6 nián 2 yuè 1 rì
+RUSSIAN: Ученица: Анна 1 февраля 2026 г.
+WORDS
+- 学生 | xué shēng | студент
+- 安娜 | ān nà | Анна
+- 2026 | 2 0 2 6 | 2026 год
+- 年 | nián | Год
+- 2 | 2 | 2
+- 月 | yuè | луна
+- 1 | 1 | 1
+- 日 | rì | день
+END_WORDS
+END_SENTENCE
+
+END_PARAGRAPH

@@ -56,17 +56,7 @@ def special_format_template() -> str:
     ).strip()
 
 
-def special_format_presets() -> Dict[str, str]:
-    preset_file = BASE_DIR / "templates" / "ivan_liu_dialog_special_format.txt"
-    presets = {
-        "Минимальный шаблон": special_format_template(),
-    }
-    if preset_file.exists():
-        presets["Диалог Иван — профессор Лю"] = preset_file.read_text(encoding="utf-8")
-    return presets
-
-
-def free_text_presets() -> Dict[str, Dict[str, str]]:
+def ready_text_library() -> List[Dict[str, str]]:
     lesson_22_upper = textwrap_dedent(
         """
         尊敬的李教授：
@@ -112,12 +102,72 @@ def free_text_presets() -> Dict[str, Dict[str, str]]:
         """
     ).strip()
     lesson_22_both = f"{lesson_22_upper}\n\n{lesson_22_lower}"
-    return {
-        "Пусто / свой текст": {"title": "Новый китайский текст", "text": ""},
-        "22课 上 — письмо Анны": {"title": "22课 上 — письмо Анны профессору Ли", "text": lesson_22_upper},
-        "22课 下 — ответ профессора": {"title": "22课 下 — ответ профессора Ли", "text": lesson_22_lower},
-        "22课 — оба текста": {"title": "22课 — письмо и ответ", "text": lesson_22_both},
+    return [
+        {
+            "id": "custom",
+            "title": "Пусто / свой текст",
+            "description": "Пустой шаблон для собственного китайского текста.",
+            "raw_text": "",
+            "special_format_file": "",
+        },
+        {
+            "id": "ivan_liu",
+            "title": "Диалог Иван — профессор Лю",
+            "description": "Большой учебный диалог про конференцию, регистрацию и академическую коммуникацию.",
+            "raw_text": "",
+            "special_format_file": "ivan_liu_dialog_special_format.txt",
+        },
+        {
+            "id": "lesson_22_upper",
+            "title": "22课 上 — письмо Анны",
+            "description": "Письмо студентки Анны профессору Ли с вопросами о написании научной статьи.",
+            "raw_text": lesson_22_upper,
+            "special_format_file": "lesson_22_upper_special_format.txt",
+        },
+        {
+            "id": "lesson_22_lower",
+            "title": "22课 下 — ответ профессора",
+            "description": "Ответ профессора Ли с разбором структуры китайской научной статьи.",
+            "raw_text": lesson_22_lower,
+            "special_format_file": "lesson_22_lower_special_format.txt",
+        },
+        {
+            "id": "lesson_22_both",
+            "title": "22课 — письмо и ответ",
+            "description": "Оба текста 22 урока подряд: письмо Анны и ответ профессора Ли.",
+            "raw_text": lesson_22_both,
+            "special_format_file": "lesson_22_both_special_format.txt",
+        },
+    ]
+
+
+def free_text_presets() -> Dict[str, Dict[str, str]]:
+    presets = {}
+    for item in ready_text_library():
+        if "raw_text" not in item or (not item["raw_text"] and item["id"] != "custom"):
+            continue
+        presets[item["title"]] = {
+            "title": "Новый китайский текст" if item["id"] == "custom" else item["title"],
+            "text": item["raw_text"],
+            "description": item["description"],
+        }
+    return presets
+
+
+def special_format_presets() -> Dict[str, str]:
+    presets = {
+        "Минимальный шаблон": special_format_template(),
     }
+    for item in ready_text_library():
+        special_filename = item.get("special_format_file", "")
+        if not special_filename:
+            continue
+        preset_file = BASE_DIR / "templates" / special_filename
+        if preset_file.exists():
+            presets[item["title"]] = preset_file.read_text(encoding="utf-8")
+        else:
+            presets[item["title"]] = ""
+    return presets
 
 
 def llm_prompt_for_special_format() -> str:
@@ -478,6 +528,36 @@ def normalize_dataset(data: Dict[str, Any]) -> Dict[str, Any]:
         raise ValueError("Модель не вернула пригодную структуру paragraphs/sentences/words.")
 
     return {"title": title, "paragraphs": paragraphs}
+
+
+def dataset_to_special_format(dataset: Dict[str, Any]) -> str:
+    normalized = normalize_dataset(dataset)
+
+    def flat(text: str) -> str:
+        return re.sub(r"\s+", " ", str(text)).strip()
+
+    lines = [f"TITLE: {normalized['title']}", ""]
+    for paragraph in normalized["paragraphs"]:
+        lines.append("PARAGRAPH")
+        lines.append(f"HANZI: {flat(paragraph['hanzi'])}")
+        lines.append(f"PINYIN: {flat(paragraph['pinyin'])}")
+        lines.append(f"RUSSIAN: {flat(paragraph['russian'])}")
+        lines.append("")
+        for sentence in paragraph["sentences"]:
+            lines.append("SENTENCE")
+            lines.append(f"HANZI: {flat(sentence['hanzi'])}")
+            lines.append(f"PINYIN: {flat(sentence['pinyin'])}")
+            lines.append(f"RUSSIAN: {flat(sentence['russian'])}")
+            lines.append("WORDS")
+            for word in sentence["words"]:
+                lines.append(f"- {flat(word['hanzi'])} | {flat(word['pinyin'])} | {flat(word['russian'])}")
+            lines.append("END_WORDS")
+            lines.append("END_SENTENCE")
+            lines.append("")
+        lines.append("END_PARAGRAPH")
+        lines.append("")
+    return "\n".join(lines).strip()
+
 
 def dataset_stats(dataset: Dict[str, Any]) -> Dict[str, int]:
     paragraphs = dataset["paragraphs"]
@@ -842,6 +922,20 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
     }}
     .body {{ display: inline; font-size: 18px; line-height: 1.45; }}
     .word-card .body {{ font-size: 24px; }}
+    .count-badge {{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 32px;
+      margin-left: 10px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(36,92,79,.1);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      vertical-align: middle;
+    }}
     .banner {{
       margin-top: 16px;
       padding: 16px 18px;
@@ -1047,6 +1141,24 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
     }}
 
+    function collapseWords(words) {{
+      const grouped = new Map();
+      words.forEach(word => {{
+        if (!grouped.has(word.key)) {{
+          grouped.set(word.key, {{
+            ...word,
+            count: 1
+          }});
+        }} else {{
+          grouped.get(word.key).count += 1;
+        }}
+      }});
+      return [...grouped.values()].map((word, index) => ({{
+        ...word,
+        unitIndex: index
+      }}));
+    }}
+
     function buildUnits() {{
       const sentenceUnits = [];
       const paragraphUnits = [];
@@ -1057,7 +1169,7 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
 
         paragraph.sentences.forEach((sentence, sentenceIndex) => {{
           const globalSentenceIndex = sentenceUnits.length + 1;
-          const words = sentence.words.map((word, wordIndex) => {{
+          const rawWords = sentence.words.map((word, wordIndex) => {{
             const item = {{
               ...word,
               key: `${{word.hanzi}}|${{word.pinyin}}|${{word.russian}}`,
@@ -1086,6 +1198,10 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
             }}
             return item;
           }});
+          const words = collapseWords(rawWords);
+          const sentenceMeta = words.length === rawWords.length
+            ? `${{words.length}} слов(а)`
+            : `${{words.length}} карточек · ${{rawWords.length}} слов в тексте`;
 
           sentenceUnits.push({{
             id: sentence.id,
@@ -1094,7 +1210,7 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
             paragraphNumber: paragraphIndex + 1,
             sentenceNumber: sentenceIndex + 1,
             title: `Предложение ${{globalSentenceIndex}}`,
-            meta: `${{words.length}} слов(а)`,
+            meta: sentenceMeta,
             readingItems: [{{
               hanzi: sentence.hanzi,
               pinyin: sentence.pinyin,
@@ -1103,24 +1219,28 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
             words
           }});
 
-          paragraphWords.push(...words.map((word, index) => ({{
+          paragraphWords.push(...rawWords.map((word, index) => ({{
             ...word,
             unitIndex: paragraphWords.length + index,
             instanceId: `${{word.instanceId}}-paragraph`
           }})));
         }});
+        const collapsedParagraphWords = collapseWords(paragraphWords);
+        const paragraphMeta = collapsedParagraphWords.length === paragraphWords.length
+          ? `${{paragraph.sentences.length}} предложений · ${{paragraphWords.length}} слов(а)`
+          : `${{paragraph.sentences.length}} предложений · ${{collapsedParagraphWords.length}} карточек · ${{paragraphWords.length}} слов в тексте`;
 
         paragraphUnits.push({{
           id: paragraph.id,
           kind: 'paragraph',
           title: `Абзац ${{paragraphIndex+1}}`,
-          meta: `${{paragraph.sentences.length}} предложений · ${{paragraphWords.length}} слов(а)`,
+          meta: paragraphMeta,
           readingItems: paragraph.sentences.map(sentence => ({{
             hanzi: sentence.hanzi,
             pinyin: sentence.pinyin,
             russian: sentence.russian
           }})),
-          words: paragraphWords
+          words: collapsedParagraphWords
         }});
       }});
 
@@ -1320,7 +1440,10 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       const word = state.selection.word === null ? '—' : state.currentUnit.words[state.selection.word].hanzi;
       const pinyin = state.selection.pinyin === null ? '—' : state.currentUnit.words[state.selection.pinyin].pinyin;
       const russian = state.selection.russian === null ? '—' : state.currentUnit.words[state.selection.russian].russian;
-      el.selectionStatus.textContent = `Слово: ${{word}} | Pinyin: ${{pinyin}} | Перевод: ${{russian}}`;
+      const merged = state.currentUnit.words.some(item => item.count > 1)
+        ? ' Повторы внутри блока объединены в одну карточку.'
+        : '';
+      el.selectionStatus.textContent = `Слово: ${{word}} | Pinyin: ${{pinyin}} | Перевод: ${{russian}}.${{merged}}`;
     }}
 
     function makeCard(type, wordIndex, label, text, extra='') {{
@@ -1329,7 +1452,9 @@ def game_html(dataset: Dict[str, Any], storage_key: str) -> str:
       card.dataset.type = type;
       card.dataset.wordIndex = String(wordIndex);
       card.tabIndex = 0;
-      card.innerHTML = `<span class="idx">${{label}}</span><span class="body">${{text}}</span>`;
+      const word = state.currentUnit.words[wordIndex];
+      const countBadge = word.count > 1 ? `<span class="count-badge">×${{word.count}}</span>` : '';
+      card.innerHTML = `<span class="idx">${{label}}</span><span class="body">${{text}}</span>${{countBadge}}`;
       card.addEventListener('click', () => clickCard(type, wordIndex));
       card.addEventListener('keydown', event => {{
         if (event.key === 'Enter' || event.key === ' ') {{
@@ -1665,6 +1790,8 @@ def main() -> None:
             mime="text/plain",
             use_container_width=True,
         )
+    library_items = ready_text_library()
+    library_by_title = {item["title"]: item for item in library_items}
     special_presets = special_format_presets()
     free_presets = free_text_presets()
     uploaded = st.file_uploader("Загрузите `.txt` или `.md`", type=["txt", "md"]) if mode == "Бесплатная автогенерация" else None
@@ -1673,7 +1800,7 @@ def main() -> None:
     source_text = ""
     if mode == "Бесплатная автогенерация":
         preset_name = st.selectbox(
-            "Готовый текст",
+            "Библиотека готовых текстов",
             options=list(free_presets.keys()),
             index=0,
             key="source_text_preset_name",
@@ -1682,16 +1809,45 @@ def main() -> None:
             st.session_state["source_text"] = free_presets[preset_name]["text"]
             st.session_state["dataset_title"] = free_presets[preset_name]["title"]
             st.session_state["source_text_loaded_preset"] = preset_name
+        selected_entry = free_presets[preset_name]
+        st.caption(
+            f"{selected_entry['description']} "
+            f"Символов: {len(selected_entry['text'])}. "
+            "Можно выбрать готовый текст или вставить свой ниже."
+        )
     elif mode == "Специальный формат":
         preset_name = st.selectbox(
-            "Готовый шаблон",
+            "Библиотека готовых шаблонов",
             options=list(special_presets.keys()),
             index=1 if "Диалог Иван — профессор Лю" in special_presets else 0,
             key="special_format_preset_name",
         )
+        selected_item = library_by_title.get(preset_name)
         if st.session_state.get("special_format_loaded_preset") != preset_name:
-            st.session_state["special_format_text"] = special_presets[preset_name]
+            preset_text = special_presets[preset_name]
+            if not preset_text and selected_item is not None and selected_item.get("raw_text"):
+                with st.spinner("Готовлю special format для выбранного текста..."):
+                    dataset = generate_dataset_free(selected_item["raw_text"], selected_item["title"])
+                    preset_text = dataset_to_special_format(dataset)
+                    special_filename = selected_item.get("special_format_file", "")
+                    if special_filename:
+                        target = BASE_DIR / "templates" / special_filename
+                        target.write_text(preset_text, encoding="utf-8")
+            st.session_state["special_format_text"] = preset_text
             st.session_state["special_format_loaded_preset"] = preset_name
+        if selected_item is not None:
+            if special_presets.get(preset_name):
+                st.caption(
+                    f"{selected_item['description']} "
+                    "Этот вариант уже размечен в специальном формате и готов к тренировке без автогенерации."
+                )
+            else:
+                st.caption(
+                    f"{selected_item['description']} "
+                    "Если шаблон ещё не сохранён в проекте, приложение построит special format автоматически и закеширует его."
+                )
+        else:
+            st.caption("Базовый шаблон специального формата для ручной разметки или подготовки текста через LLM.")
 
     title = st.text_input("Название набора", value=st.session_state.get("dataset_title", "Новый китайский текст"))
 
